@@ -19,3 +19,51 @@ spec:
     schema:
       openAPIV3Schema:
         type: object
+        properties:
+          spec:
+            type: object
+            description: Specification of a module
+            properties:
+              name:
+                type: string
+                description: Name of the module
+              version:
+                type: string
+                description: Version of module
+              type:
+                type: string
+                description: Runtime type e.g. docker
+              restartPolicy:
+                type: string
+                description: Restart policy for the module
+              imagePullPolicy:
+                type: string
+                description: Image pull policy for this modules image
+              settings:
+                type: string
+              owner:
+                type: object
+                description: Owner of the module
+                properties:
+                  kind:
+                    type: string
+                    description: Kind of the owner
+                  name:
+                    type: string
+                    description: Name of the owner
+                  uid:
+                    type: string
+                    description: UID of the owner
+                  apiVersion:
+                    type: string
+                    description: API version of the owner
+              env:
+                x-kubernetes-preserve-unknown-fields: true
+                type: object
+              status:
+                type: string
+                description: Status of the module
+         
+              
+
+
